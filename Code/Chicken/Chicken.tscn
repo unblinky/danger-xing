@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://d2ylk5fblpau0" path="res://Chicken/Chicken.gd" id="1_13h8f"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_13h8f"]
+size = Vector3(0.9, 0.9, 0.9)
+
 [sub_resource type="BoxMesh" id="BoxMesh_13h8f"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_nv08f"]
@@ -17,35 +20,48 @@ albedo_color = Color(0.8309133, 0.17172858, 6.738305e-07, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_1m4ld"]
 
-[node name="Chicken" type="Node3D" unique_id=1595162323]
+[node name="Chicken" type="Area3D" unique_id=1331344239]
 script = ExtResource("1_13h8f")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=962676149]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1228825116]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_13h8f")
+
+[node name="Graphics" type="Node3D" parent="." unique_id=1595162323]
+transform = Transform3D(0.773, 0, 0, 0, 0.773, 0, 0, 0, 0.773, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Graphics" unique_id=962676149]
 transform = Transform3D(0.62095976, 0, 0, 0, 0.7779697, 0.17316687, 0, -0.13678509, 0.9848925, 0, 0.23405814, 0.0289129)
 mesh = SubResource("BoxMesh_13h8f")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1092566403]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Graphics" unique_id=1092566403]
 transform = Transform3D(0.46743196, 0, 0, 0, 0.46743196, 0, 0, 0, 0.46743196, 0, 0.7513596, -0.4928006)
 mesh = SubResource("BoxMesh_nv08f")
 
-[node name="Beak" type="MeshInstance3D" parent="." unique_id=1847760561]
+[node name="Beak" type="MeshInstance3D" parent="Graphics" unique_id=1847760561]
 transform = Transform3D(0.16036025, 0, 0, 0, 0.1565742, 0.05882232, 0, -0.03463999, 0.2658793, 0, 0.7135552, -0.7687149)
 material_override = SubResource("StandardMaterial3D_kahpe")
 mesh = SubResource("BoxMesh_nv08f")
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=330973047]
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Graphics" unique_id=330973047]
 transform = Transform3D(0.3225941, 0, 0, 0, 0.45173603, 0.12011324, 0, -0.12011324, 0.45173603, 0, 0.7513596, 0.4395994)
 mesh = SubResource("BoxMesh_nv08f")
 
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=1819638931]
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Graphics" unique_id=1819638931]
 transform = Transform3D(0.20359908, 0, 0, 0, 0.28510454, 0.07580717, 0, -0.07580717, 0.28510454, 0, 1.0495838, 0.66016424)
 mesh = SubResource("BoxMesh_nv08f")
 
-[node name="Wings" type="MeshInstance3D" parent="." unique_id=1007204288]
+[node name="Wings" type="MeshInstance3D" parent="Graphics" unique_id=1007204288]
 transform = Transform3D(1, 0, 0, 0, 0.8137911, 0.58115757, 0, -0.58115757, 0.8137911, 0, 0.35623857, 0.10857487)
 mesh = SubResource("BoxMesh_htchh")
 
-[node name="Cowlick" type="MeshInstance3D" parent="." unique_id=176117547]
+[node name="Cowlick" type="MeshInstance3D" parent="Graphics" unique_id=176117547]
 transform = Transform3D(0.10501046, 0, 0, 0, 0.27668726, -0.46938124, 0, 0.37919658, 0.34249204, 0, 1.0141598, -0.50403744)
 material_override = SubResource("StandardMaterial3D_b74ct")
 mesh = SubResource("BoxMesh_1m4ld")
+
+[node name="Rig" type="Node3D" parent="." unique_id=1666240517]
+transform = Transform3D(0.9809992, -0.1402852, 0.13401727, 0, 0.69076884, 0.7230757, -0.19401178, -0.70933664, 0.67764366, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Rig" unique_id=1586150080]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9802322e-08, 1.843405, 8.477018)
