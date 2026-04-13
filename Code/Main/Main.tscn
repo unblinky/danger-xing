@@ -1,6 +1,44 @@
 [gd_scene format=3 uid="uid://cib786y4fr7cb"]
 
 [ext_resource type="Script" uid="uid://ckplnjj5kkyta" path="res://Main/Main.gd" id="1_lxy7q"]
+[ext_resource type="PackedScene" uid="uid://dp46nxm4qxs46" path="res://Chicken/Chicken.tscn" id="2_83ytx"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_83ytx"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_amygn"]
+sky_material = SubResource("ProceduralSkyMaterial_83ytx")
+
+[sub_resource type="Environment" id="Environment_ps1la"]
+background_mode = 2
+sky = SubResource("Sky_amygn")
+tonemap_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_amygn"]
+albedo_color = Color(0.17611083, 0.3173688, 0.02249665, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ps1la"]
+size = Vector3(40, 0.1, 40)
 
 [node name="Main" type="Node" unique_id=1391425956]
 script = ExtResource("1_lxy7q")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=718125935]
+transform = Transform3D(-0.7443116, -0.5340554, 0.40098014, 0, 0.60042024, 0.79968464, -0.6678325, 0.59521455, -0.44689974, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1596629416]
+environment = SubResource("Environment_ps1la")
+
+[node name="Chicken" parent="." unique_id=1595162323 instance=ExtResource("2_83ytx")]
+
+[node name="Gound" type="MeshInstance3D" parent="." unique_id=387099955]
+material_override = SubResource("StandardMaterial3D_amygn")
+mesh = SubResource("BoxMesh_ps1la")
+
+[node name="Rig" type="Node3D" parent="." unique_id=134523321]
+transform = Transform3D(0.9809992, -0.1402852, 0.13401727, 0, 0.69076884, 0.7230757, -0.19401178, -0.70933664, 0.67764366, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Rig" unique_id=1057037189]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.0728426)
