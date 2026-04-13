@@ -2,9 +2,9 @@
 
 ## Game Objects
 
-- PC: Frog. Chicken.
-- NPC: Vessels. Vehicles.
-- Level: Water. Asphalt. Goals.
+- **PC:** Frog. Chicken.
+- **NPC:** Vessels. Vehicles.
+- *Level:* Water. Asphalt. Goals.
 - UI: Lives. Score.
 
 
