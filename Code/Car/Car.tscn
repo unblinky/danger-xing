@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://d17l7nmy86h7e"]
+
+[ext_resource type="Script" uid="uid://dnhj4cvr6vhta" path="res://Car/Car.gd" id="1_32r3e"]
+[ext_resource type="Material" uid="uid://cl6is33lox6ev" path="res://Car/assets/Roof.tres" id="2_argwm"]
+[ext_resource type="Material" uid="uid://dlyf5cjkcjm5j" path="res://Car/assets/RubberTire.tres" id="2_v636r"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_32r3e"]
+size = Vector3(0.9, 0.9, 0.9)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_argwm"]
+albedo_color = Color(0.24573019, 0.39246595, 0.6108407, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_32r3e"]
+size = Vector3(0.589, 0.259, 0.851)
+
+[sub_resource type="BoxMesh" id="BoxMesh_p3hxm"]
+size = Vector3(0.539, 0.155, 0.545)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_32r3e"]
+top_radius = 0.1
+bottom_radius = 0.1
+
+[sub_resource type="PrismMesh" id="PrismMesh_v636r"]
+left_to_right = 1.0
+
+[node name="Car" type="Area3D" unique_id=211666107]
+script = ExtResource("1_32r3e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1898743657]
+shape = SubResource("BoxShape3D_32r3e")
+
+[node name="Graphics" type="Node3D" parent="." unique_id=1296779087]
+
+[node name="Body" type="MeshInstance3D" parent="Graphics" unique_id=1917234255]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.27913666, 0)
+material_override = SubResource("StandardMaterial3D_argwm")
+mesh = SubResource("BoxMesh_32r3e")
+
+[node name="Body2" type="MeshInstance3D" parent="Graphics" unique_id=669816335]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44998443, 0.09645611)
+material_override = ExtResource("2_argwm")
+mesh = SubResource("BoxMesh_p3hxm")
+
+[node name="Tires" type="MeshInstance3D" parent="Graphics" unique_id=1595223670]
+transform = Transform3D(-4.371139e-08, 0.36220586, 0, -1, -1.5832521e-08, 0, 0, 0, 1, 1.1920929e-07, 0.16949299, 0.2700532)
+material_override = ExtResource("2_v636r")
+mesh = SubResource("CylinderMesh_32r3e")
+
+[node name="Tires2" type="MeshInstance3D" parent="Graphics" unique_id=30817253]
+transform = Transform3D(-4.371139e-08, 0.36220586, 0, -1, -1.5832521e-08, 0, 0, 0, 1, 1.1920929e-07, 0.16949299, -0.27893132)
+material_override = ExtResource("2_v636r")
+mesh = SubResource("CylinderMesh_32r3e")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Graphics" unique_id=474655784]
+transform = Transform3D(-7.569624e-09, 0, -0.47600308, 0, 0.14711834, 0, 0.17317282, 0, -2.0806755e-08, 0, 0.4537146, -0.24866965)
+mesh = SubResource("PrismMesh_v636r")

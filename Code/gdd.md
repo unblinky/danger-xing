@@ -2,8 +2,14 @@
 
 ## Game Objects
 
-- **PC:** Frog. ChicKen.
-- **NPC:** Vessels. Vehicles.
+- **PC:** ChicKen.
+- **NPC:**
+  - Vessels:
+	- Boat.
+	- Log.
+  - Vehicles:
+	- Car.
+	- Bus.
 - **Level:**
   - Water.
   - Lane.
