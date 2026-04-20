@@ -46,10 +46,15 @@ shadow_enabled = true
 environment = SubResource("Environment_ps1la")
 
 [node name="Chicken" parent="." unique_id=1595162323 instance=ExtResource("2_83ytx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 4)
 
 [node name="Goal" parent="." unique_id=1825972288 instance=ExtResource("3_amygn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12)
+
+[node name="Goal3" parent="." unique_id=1248000346 instance=ExtResource("3_amygn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.016166687, -1)
+
+[node name="Goal4" parent="." unique_id=94995532 instance=ExtResource("3_amygn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -1)
 
 [node name="Gound" type="MeshInstance3D" parent="." unique_id=387099955]
 material_override = SubResource("StandardMaterial3D_amygn")
