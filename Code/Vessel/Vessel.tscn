@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dr60xawyh8org"]
+
+[ext_resource type="Script" uid="uid://4luqax8h1xgf" path="res://Vessel/Vessel.gd" id="1_fywir"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t7872"]
+size = Vector3(0.9, 0.9, 0.9)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_t7872"]
+
+[node name="Vessel" type="Area3D" unique_id=550237344]
+script = ExtResource("1_fywir")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1647344960]
+shape = SubResource("BoxShape3D_t7872")
+
+[node name="Graphics" type="MeshInstance3D" parent="." unique_id=860163270]
+transform = Transform3D(-2.6226834e-08, -0.6, 0, 0.6, -2.6226834e-08, 0, 0, 0, 0.9, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_t7872")

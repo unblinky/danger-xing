@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://berl535au27hs" path="res://Lane/Lane.tscn" id="4_6aewd"]
 [ext_resource type="PackedScene" uid="uid://d17l7nmy86h7e" path="res://Car/Car.tscn" id="4_ps1la"]
 [ext_resource type="PackedScene" uid="uid://ss2ms58fo62u" path="res://River/River.tscn" id="6_u2i7p"]
+[ext_resource type="PackedScene" uid="uid://dr60xawyh8org" path="res://Vessel/Vessel.tscn" id="7_hh5pf"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_83ytx"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -45,6 +46,7 @@ shadow_enabled = true
 environment = SubResource("Environment_ps1la")
 
 [node name="Chicken" parent="." unique_id=1595162323 instance=ExtResource("2_83ytx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 4)
 
 [node name="Goal" parent="." unique_id=1825972288 instance=ExtResource("3_amygn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12)
@@ -102,6 +104,9 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -9, 
 
 [node name="River" parent="." unique_id=727142097 instance=ExtResource("6_u2i7p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="Vessel" parent="River" unique_id=550237344 instance=ExtResource("7_hh5pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
 
 [node name="Lane5" type="MeshInstance3D" parent="." unique_id=1043720086]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -9)

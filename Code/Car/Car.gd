@@ -3,9 +3,6 @@ class_name Car
 
 var lane: Lane
 var speed: float = 0.0 # m/sec. # Decimals
-#var age: int = 0 # Whole numbers
-#var nameers: String = "Kyle"
-#var is_a_nice_guy: bool = true
 
 func _ready() -> void:
 	# Should be Lane.
