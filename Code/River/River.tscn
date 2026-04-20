@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://ss2ms58fo62u"]
+
+[ext_resource type="Script" uid="uid://e8lxj8hcaox7" path="res://River/River.gd" id="1_bimn6"]
+[ext_resource type="Material" uid="uid://nm64wiughgh1" path="res://River/assets/Water.tres" id="2_bmykd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_huj1o"]
+size = Vector3(40, 0.15, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_amygn"]
+size = Vector3(40, 0.15, 1)
+
+[node name="River" type="Area3D" unique_id=524827375]
+script = ExtResource("1_bimn6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=814110548]
+shape = SubResource("BoxShape3D_huj1o")
+
+[node name="Graphics" type="MeshInstance3D" parent="." unique_id=727142097]
+material_override = ExtResource("2_bmykd")
+mesh = SubResource("BoxMesh_amygn")

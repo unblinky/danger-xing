@@ -16,9 +16,11 @@ func on_collision(area: Area3D):
 	if area is Goal:
 		print("Goal!!!!")
 	if area is Car:
-		cruched()
+		crushed()
+	if area is River:
+		crushed()
 
-func cruched():
+func crushed():
 	position = Vector3.ZERO
 	graphics.rotation_degrees.y = 0
 	print("Crushed!")

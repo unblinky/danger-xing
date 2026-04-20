@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c4v0peqkg130j" path="res://Goal/Goal.tscn" id="3_amygn"]
 [ext_resource type="PackedScene" uid="uid://berl535au27hs" path="res://Lane/Lane.tscn" id="4_6aewd"]
 [ext_resource type="PackedScene" uid="uid://d17l7nmy86h7e" path="res://Car/Car.tscn" id="4_ps1la"]
+[ext_resource type="PackedScene" uid="uid://ss2ms58fo62u" path="res://River/River.tscn" id="6_u2i7p"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_83ytx"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -53,7 +54,7 @@ material_override = SubResource("StandardMaterial3D_amygn")
 mesh = SubResource("BoxMesh_ps1la")
 
 [node name="LaneA" parent="." unique_id=1626431458 instance=ExtResource("4_6aewd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -15)
 
 [node name="Car" parent="LaneA" unique_id=211666107 instance=ExtResource("4_ps1la")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
@@ -62,7 +63,7 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -9, 0, 0)
 
 [node name="LaneB" parent="." unique_id=276072511 instance=ExtResource("4_6aewd")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, -2)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, -16)
 speed_limit = 10.0
 
 [node name="Car" parent="LaneB" unique_id=808741942 instance=ExtResource("4_ps1la")]
@@ -78,7 +79,7 @@ transform = Transform3D(-4.371138e-08, 0, -1, 0, 1, 0, 1, 0, -4.371138e-08, 0.99
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -9, 0, 0)
 
 [node name="LaneC" parent="." unique_id=398420557 instance=ExtResource("4_6aewd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -17)
 
 [node name="Car" parent="LaneC" unique_id=242654073 instance=ExtResource("4_ps1la")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
@@ -87,7 +88,7 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -9, 0, 0)
 
 [node name="LaneD" parent="." unique_id=1339310772 instance=ExtResource("4_6aewd")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, -4)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, -18)
 speed_limit = 5.0
 
 [node name="Car3" parent="LaneD" unique_id=1135290254 instance=ExtResource("4_ps1la")]
@@ -99,10 +100,8 @@ transform = Transform3D(-4.371138e-08, 0, -1, 0, 1, 0, 1, 0, -4.371138e-08, 7, 0
 [node name="Car2" parent="LaneD" unique_id=293814583 instance=ExtResource("4_ps1la")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -9, 0, 0)
 
-[node name="Lane4" type="MeshInstance3D" parent="." unique_id=891213809]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7)
-material_override = SubResource("StandardMaterial3D_83ytx")
-mesh = SubResource("BoxMesh_amygn")
+[node name="River" parent="." unique_id=727142097 instance=ExtResource("6_u2i7p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
 
 [node name="Lane5" type="MeshInstance3D" parent="." unique_id=1043720086]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -9)
