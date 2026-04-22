@@ -1,16 +1,14 @@
 [gd_scene format=3 uid="uid://dp46nxm4qxs46"]
 
 [ext_resource type="Script" uid="uid://d2ylk5fblpau0" path="res://Chicken/Chicken.gd" id="1_13h8f"]
+[ext_resource type="Material" uid="uid://dlyf5cjkcjm5j" path="res://Car/assets/RubberTire.tres" id="2_nv08f"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_13h8f"]
-size = Vector3(0.9, 0.9, 0.9)
+size = Vector3(0.8, 0.9, 0.8)
 
 [sub_resource type="BoxMesh" id="BoxMesh_13h8f"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_nv08f"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kahpe"]
-albedo_color = Color(0.43378288, 0.433639, 0, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_htchh"]
 size = Vector3(1, 0.542, 0.542)
@@ -40,7 +38,7 @@ mesh = SubResource("BoxMesh_nv08f")
 
 [node name="Beak" type="MeshInstance3D" parent="Graphics" unique_id=1847760561]
 transform = Transform3D(0.16036025, 0, 0, 0, 0.1565742, 0.05882232, 0, -0.03463999, 0.2658793, 0, 0.7135552, -0.7687149)
-material_override = SubResource("StandardMaterial3D_kahpe")
+material_override = ExtResource("2_nv08f")
 mesh = SubResource("BoxMesh_nv08f")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="Graphics" unique_id=330973047]

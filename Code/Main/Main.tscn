@@ -47,21 +47,21 @@ environment = SubResource("Environment_ps1la")
 
 [node name="Chicken" parent="." unique_id=1595162323 instance=ExtResource("2_83ytx")]
 
-[node name="Goal" parent="." unique_id=1825972288 instance=ExtResource("3_amygn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12)
+[node name="GoalA" parent="." unique_id=1825972288 instance=ExtResource("3_amygn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -3)
 
-[node name="Goal3" parent="." unique_id=1248000346 instance=ExtResource("3_amygn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.016166687, -1)
+[node name="GoalB" parent="." unique_id=684977139 instance=ExtResource("3_amygn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -3)
 
-[node name="Goal4" parent="." unique_id=94995532 instance=ExtResource("3_amygn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -1)
+[node name="GoalC" parent="." unique_id=1345037798 instance=ExtResource("3_amygn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -3)
 
 [node name="Gound" type="MeshInstance3D" parent="." unique_id=387099955]
 material_override = SubResource("StandardMaterial3D_amygn")
 mesh = SubResource("BoxMesh_ps1la")
 
 [node name="LaneA" parent="." unique_id=1626431458 instance=ExtResource("4_6aewd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -15)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
 
 [node name="Car" parent="LaneA" unique_id=211666107 instance=ExtResource("4_ps1la")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
@@ -108,10 +108,22 @@ transform = Transform3D(-4.371138e-08, 0, -1, 0, 1, 0, 1, 0, -4.371138e-08, 7, 0
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -9, 0, 0)
 
 [node name="River" parent="." unique_id=727142097 instance=ExtResource("6_u2i7p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
 
 [node name="Vessel" parent="River" unique_id=550237344 instance=ExtResource("7_hh5pf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.39947104, 0, 0)
+
+[node name="Vessel2" parent="River" unique_id=1300945560 instance=ExtResource("7_hh5pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.399471, 0, 0)
+
+[node name="Vessel3" parent="River" unique_id=445984414 instance=ExtResource("7_hh5pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6005287, 0, 0)
+
+[node name="Vessel4" parent="River" unique_id=1656591368 instance=ExtResource("7_hh5pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.600529, 0, 0)
+
+[node name="Vessel5" parent="River" unique_id=873497483 instance=ExtResource("7_hh5pf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.600529, 0, 0)
 
 [node name="Lane5" type="MeshInstance3D" parent="." unique_id=1043720086]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -9)

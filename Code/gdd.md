@@ -1,8 +1,20 @@
 # Danger X-ing: GDD
 
+## Design Pillars
+- Study old arcades.
+
+
 ## Game Objects
 
-- **PC:** ChicKen.
+### Chicken
+
+Chicken is the player character. Player moves between points on a grid.
+
+- Lives
+- Position (grid) and (vessel)
+- Rinding *(ridable?)*
+
+
 - **NPC:**
   - Vessels:
 	- Boat.
