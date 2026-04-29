@@ -24,6 +24,10 @@ config/icon="res://Main/icon.png"
 naming/scene_name_casing=1
 naming/script_name_casing=1
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/Todo_Manager/plugin.cfg")
+
 [input]
 
 move_forward={

@@ -93,13 +93,7 @@ func on_collision(area: Area3D):
 		print("Goal!!!!")
 		area.occupy()
 		rabbit_hole()
-		
-		# FIXME: Printing wrong.
-		# HACK: In the wrong place. Should be in Main.
-		if get_parent().is_game_over():
-			print("Level Complete")
-		else:
-			print ("Still more to go.")
+		get_parent().is_level_complete()
 	
 	if area is Car:
 		print("Hit by car.")
