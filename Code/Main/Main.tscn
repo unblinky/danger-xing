@@ -48,25 +48,52 @@ environment = SubResource("Environment_ps1la")
 [node name="Chicken" parent="." unique_id=1595162323 instance=ExtResource("2_83ytx")]
 
 [node name="GoalA" parent="." unique_id=1825972288 instance=ExtResource("3_amygn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -6)
 
 [node name="GoalB" parent="." unique_id=684977139 instance=ExtResource("3_amygn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -6)
 
 [node name="GoalC" parent="." unique_id=1345037798 instance=ExtResource("3_amygn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -6)
 
 [node name="Gound" type="MeshInstance3D" parent="." unique_id=387099955]
 material_override = SubResource("StandardMaterial3D_amygn")
 mesh = SubResource("BoxMesh_ps1la")
 
 [node name="LaneA" parent="." unique_id=1626431458 instance=ExtResource("4_6aewd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
 
 [node name="Car" parent="LaneA" unique_id=211666107 instance=ExtResource("4_ps1la")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
 
 [node name="Car2" parent="LaneA" unique_id=1255686893 instance=ExtResource("4_ps1la")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -9, 0, 0)
+
+[node name="LaneA2" parent="." unique_id=783416796 instance=ExtResource("4_6aewd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+
+[node name="Car" parent="LaneA2" unique_id=1733780185 instance=ExtResource("4_ps1la")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Car2" parent="LaneA2" unique_id=1902184579 instance=ExtResource("4_ps1la")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -9, 0, 0)
+
+[node name="LaneA3" parent="." unique_id=727313920 instance=ExtResource("4_6aewd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+
+[node name="Car" parent="LaneA3" unique_id=1501187658 instance=ExtResource("4_ps1la")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Car2" parent="LaneA3" unique_id=1163245640 instance=ExtResource("4_ps1la")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -9, 0, 0)
+
+[node name="LaneA4" parent="." unique_id=1309140779 instance=ExtResource("4_6aewd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+
+[node name="Car" parent="LaneA4" unique_id=1431744417 instance=ExtResource("4_ps1la")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Car2" parent="LaneA4" unique_id=115617667 instance=ExtResource("4_ps1la")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -9, 0, 0)
 
 [node name="LaneB" parent="." unique_id=276072511 instance=ExtResource("4_6aewd")]

@@ -21,7 +21,7 @@ albedo_color = Color(0.8309133, 0.17172858, 6.738305e-07, 1)
 [node name="Chicken" type="Area3D" unique_id=1331344239]
 script = ExtResource("1_13h8f")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1228825116]
+[node name="Collider" type="CollisionShape3D" parent="." unique_id=1228825116]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("BoxShape3D_13h8f")
 

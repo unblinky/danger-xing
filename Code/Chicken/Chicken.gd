@@ -1,6 +1,7 @@
 extends Area3D
 class_name Chicken
 
+@onready var collider: CollisionShape3D = $Collider
 @onready var graphics: Node3D = $Graphics
 @onready var lives_ui: Label = $UI/LivesUI
 
@@ -69,20 +70,22 @@ func _process(delta: float) -> void:
 		weight = 1.0
 		from = to
 		graphics.show()
+		collider.set_deferred("disabled", false)
 	
 	if riding_vessel != null:
 		position = riding_vessel.global_position
 
 
-func rabbit_hole():
+func reposition_to_spawn():
 	from = position
 	to = spawning_point
 	weight = 0.0
 	graphics.hide()
+	collider.set_deferred("disabled", true)
 
 
 func destroy():
-	rabbit_hole()
+	reposition_to_spawn()
 	graphics.rotation_degrees.y = 0
 	lives -= 1
 	lives_ui.text = "Lives: " + str(lives)
@@ -92,7 +95,7 @@ func on_collision(area: Area3D):
 	if area is Goal:
 		print("Goal!!!!")
 		area.occupy()
-		rabbit_hole()
+		reposition_to_spawn()
 		get_parent().is_level_complete()
 	
 	if area is Car:
