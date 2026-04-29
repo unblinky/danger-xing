@@ -1,27 +1,33 @@
 extends Node
 class_name Main
 
-@onready var goal_a: Goal = $GoalA
-@onready var goal_b: Goal = $GoalB
-@onready var goal_c: Goal = $GoalC
+# Level Files.
+const SUNNY_DAY = preload("res://Levels/SunnyDay.tscn")
+const ROSE_GARDEN = preload("res://Levels/RoseGarden.tscn")
+const GARDEN_HOME = preload("res://Levels/GardenHome.tscn")
 
-var goals: Array[Goal]
+var level_files: Array[PackedScene]
+var file_index = 0
+
+var level: Level = null
+
 
 func _ready() -> void:
-	goals.append(goal_a) # [0]
-	goals.append(goal_b) # [1]
-	goals.append(goal_c) # [2]
+	level_files.append(SUNNY_DAY)   # level_files[0]
+	level_files.append(ROSE_GARDEN) # level_files[1]
+	level_files.append(GARDEN_HOME) # level_files[2]
+	load_level(SUNNY_DAY)
 
-func is_level_complete() -> bool:
-	if goals.size() <= 0:
-		print("No elements in the array: goals")
-		return false
+
+func load_level(scene: PackedScene):
+	if level != null:
+		level.queue_free()
+	level = scene.instantiate()
+	add_child(level)
+
+func next_level():
+	file_index += 1
 	
-	for goal in goals:
-		if not goal.is_occupied:
-			print ("Still more to go.")
-			return false
-	
-	print("Level Complete")
-	# TODO: Load next level.
-	return true
+	if file_index > level_files.size() - 1:
+		file_index = 0
+	load_level(level_files[file_index])

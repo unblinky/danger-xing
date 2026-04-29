@@ -7,7 +7,7 @@ class_name Chicken
 
 @export var lerp_speed: float = 8.0 # m/s lerp
 
-var lives: int = 8
+var lives: int = 3
 
 # Positionoal variables.
 var spawning_point: Vector3
@@ -87,7 +87,15 @@ func reposition_to_spawn():
 func destroy():
 	reposition_to_spawn()
 	graphics.rotation_degrees.y = 0
-	lives -= 1
+	update_lives(-1)
+
+
+func update_lives(delta_lives: int):
+	lives += delta_lives
+	if lives <= 0:
+		print("Game Over")
+		lives = 0
+	
 	lives_ui.text = "Lives: " + str(lives)
 
 
