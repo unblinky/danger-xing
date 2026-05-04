@@ -1,0 +1,185 @@
+[gd_scene format=3 uid="uid://dbe1fffxeuev3"]
+
+[ext_resource type="Script" uid="uid://bb2bkyrjx0ajd" path="res://Levels/Level.gd" id="1_xxoen"]
+[ext_resource type="PackedScene" uid="uid://c4v0peqkg130j" path="res://Goal/Goal.tscn" id="3_7fhkk"]
+[ext_resource type="PackedScene" uid="uid://berl535au27hs" path="res://Lane/Lane.tscn" id="4_broi6"]
+[ext_resource type="PackedScene" uid="uid://d17l7nmy86h7e" path="res://Car/Car.tscn" id="5_hvpca"]
+[ext_resource type="PackedScene" uid="uid://ss2ms58fo62u" path="res://River/River.tscn" id="6_s81wu"]
+[ext_resource type="PackedScene" uid="uid://dr60xawyh8org" path="res://Vessel/Vessel.tscn" id="7_t5v5h"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_83ytx"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_amygn"]
+sky_material = SubResource("ProceduralSkyMaterial_83ytx")
+
+[sub_resource type="Environment" id="Environment_ps1la"]
+background_mode = 2
+sky = SubResource("Sky_amygn")
+tonemap_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_amygn"]
+albedo_color = Color(0.17611083, 0.3173688, 0.02249665, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ps1la"]
+size = Vector3(40, 0.1, 40)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_83ytx"]
+albedo_color = Color(0.1579377, 0.12332208, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_amygn"]
+size = Vector3(40, 0.15, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_83ytx"]
+size = Vector3(40, 0.13, 1)
+
+[node name="SunnyDay" type="Node3D" unique_id=1263661284]
+script = ExtResource("1_xxoen")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=449001425]
+transform = Transform3D(-0.7443116, -0.5340554, 0.40098014, 0, 0.60042024, 0.79968464, -0.6678325, 0.59521455, -0.44689974, 9.686174, 15.357961, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1463045462]
+environment = SubResource("Environment_ps1la")
+
+[node name="Rig" type="Node3D" parent="." unique_id=780010753]
+transform = Transform3D(0.9809992, -0.1402852, 0.13401727, 0, 0.69076884, 0.7230757, -0.19401178, -0.70933664, 0.67764366, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Rig" unique_id=710497149]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9802322e-08, 1.843405, 8.477018)
+
+[node name="GoalA" parent="." unique_id=1825972288 instance=ExtResource("3_7fhkk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -6)
+
+[node name="GoalB" parent="." unique_id=663696209 instance=ExtResource("3_7fhkk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -6)
+
+[node name="GoalC" parent="." unique_id=1044986658 instance=ExtResource("3_7fhkk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -6)
+
+[node name="Gound" type="MeshInstance3D" parent="." unique_id=1852102939]
+material_override = SubResource("StandardMaterial3D_amygn")
+mesh = SubResource("BoxMesh_ps1la")
+skeleton = NodePath("../..")
+
+[node name="LaneA" parent="." unique_id=1626431458 instance=ExtResource("4_broi6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+skeleton = NodePath("../..")
+
+[node name="Car" parent="LaneA" unique_id=211666107 instance=ExtResource("5_hvpca")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Car2" parent="LaneA" unique_id=1592685128 instance=ExtResource("5_hvpca")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -9, 0, 0)
+
+[node name="LaneA2" parent="." unique_id=2020147136 instance=ExtResource("4_broi6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+skeleton = NodePath("../..")
+
+[node name="Car" parent="LaneA2" unique_id=1330392630 instance=ExtResource("5_hvpca")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Car2" parent="LaneA2" unique_id=1294694549 instance=ExtResource("5_hvpca")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -9, 0, 0)
+
+[node name="LaneA3" parent="." unique_id=694056244 instance=ExtResource("4_broi6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+skeleton = NodePath("../..")
+
+[node name="Car" parent="LaneA3" unique_id=1751200177 instance=ExtResource("5_hvpca")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Car2" parent="LaneA3" unique_id=1869493372 instance=ExtResource("5_hvpca")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -9, 0, 0)
+
+[node name="LaneA4" parent="." unique_id=1999465505 instance=ExtResource("4_broi6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+skeleton = NodePath("../..")
+
+[node name="Car" parent="LaneA4" unique_id=2029964274 instance=ExtResource("5_hvpca")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Car2" parent="LaneA4" unique_id=1814964262 instance=ExtResource("5_hvpca")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -9, 0, 0)
+
+[node name="LaneB" parent="." unique_id=1265643898 instance=ExtResource("4_broi6")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, -16)
+skeleton = NodePath("../..")
+speed_limit = 10.0
+
+[node name="Car" parent="LaneB" unique_id=1147096920 instance=ExtResource("5_hvpca")]
+transform = Transform3D(-4.371138e-08, 0, -1, 0, 1, 0, 1, 0, -4.371138e-08, -5, 0, 4.7683716e-07)
+
+[node name="Car3" parent="LaneB" unique_id=1060636959 instance=ExtResource("5_hvpca")]
+transform = Transform3D(-4.371138e-08, 0, -1, 0, 1, 0, 1, 0, -4.371138e-08, -1, 0, 0)
+
+[node name="Car4" parent="LaneB" unique_id=611146998 instance=ExtResource("5_hvpca")]
+transform = Transform3D(-4.371138e-08, 0, -1, 0, 1, 0, 1, 0, -4.371138e-08, 0.99999994, 0, -2.3841858e-07)
+
+[node name="Car2" parent="LaneB" unique_id=1718043576 instance=ExtResource("5_hvpca")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -9, 0, 0)
+
+[node name="LaneC" parent="." unique_id=1315689594 instance=ExtResource("4_broi6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -17)
+skeleton = NodePath("../..")
+
+[node name="Car" parent="LaneC" unique_id=1800245872 instance=ExtResource("5_hvpca")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Car2" parent="LaneC" unique_id=1428638543 instance=ExtResource("5_hvpca")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -9, 0, 0)
+
+[node name="LaneD" parent="." unique_id=1731706369 instance=ExtResource("4_broi6")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, -18)
+skeleton = NodePath("../..")
+speed_limit = 5.0
+
+[node name="Car3" parent="LaneD" unique_id=1045309562 instance=ExtResource("5_hvpca")]
+transform = Transform3D(-4.371138e-08, 0, -1, 0, 1, 0, 1, 0, -4.371138e-08, -1, 0, 0)
+
+[node name="Car4" parent="LaneD" unique_id=766367307 instance=ExtResource("5_hvpca")]
+transform = Transform3D(-4.371138e-08, 0, -1, 0, 1, 0, 1, 0, -4.371138e-08, 7, 0, -9.536743e-07)
+
+[node name="Car2" parent="LaneD" unique_id=278193536 instance=ExtResource("5_hvpca")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -9, 0, 0)
+
+[node name="River" parent="." unique_id=524827375 instance=ExtResource("6_s81wu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
+
+[node name="Vessel" parent="River" unique_id=550237344 instance=ExtResource("7_t5v5h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.39947104, 0, 0)
+
+[node name="Vessel2" parent="River" unique_id=1768518144 instance=ExtResource("7_t5v5h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.399471, 0, 0)
+
+[node name="Vessel3" parent="River" unique_id=1320170005 instance=ExtResource("7_t5v5h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6005287, 0, 0)
+
+[node name="Vessel4" parent="River" unique_id=1361847408 instance=ExtResource("7_t5v5h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.600529, 0, 0)
+
+[node name="Vessel5" parent="River" unique_id=521976309 instance=ExtResource("7_t5v5h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.600529, 0, 0)
+
+[node name="Lane5" type="MeshInstance3D" parent="." unique_id=1089047803]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -9)
+material_override = SubResource("StandardMaterial3D_83ytx")
+mesh = SubResource("BoxMesh_amygn")
+skeleton = NodePath("../..")
+
+[node name="Lane6" type="MeshInstance3D" parent="." unique_id=1054667650]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -11)
+material_override = SubResource("StandardMaterial3D_83ytx")
+mesh = SubResource("BoxMesh_amygn")
+skeleton = NodePath("../..")
+
+[node name="SafeZone" type="MeshInstance3D" parent="." unique_id=453130546]
+mesh = SubResource("BoxMesh_83ytx")
+skeleton = NodePath("../..")
+
+[node name="SafeZone2" type="MeshInstance3D" parent="." unique_id=1693955591]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+mesh = SubResource("BoxMesh_83ytx")
+skeleton = NodePath("../..")

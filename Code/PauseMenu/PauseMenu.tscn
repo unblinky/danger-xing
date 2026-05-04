@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://dkrcw84mho1yp"]
+
+[ext_resource type="Script" uid="uid://bo0m5o8islhfu" path="res://PauseMenu/PauseMenu.gd" id="1_egqmv"]
+[ext_resource type="StyleBox" uid="uid://dj0juri30n8wq" path="res://PauseMenu/assets/pause_menu_ui.tres" id="1_eyhbq"]
+
+[node name="PauseMenu" type="PanelContainer" unique_id=66655375]
+process_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.5
+offset_top = -65.5
+offset_right = 75.5
+offset_bottom = 65.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("1_eyhbq")
+script = ExtResource("1_egqmv")
+
+[node name="VBox" type="VBoxContainer" parent="." unique_id=1491641545]
+layout_mode = 2
+alignment = 1
+
+[node name="Message" type="Label" parent="VBox" unique_id=998474596]
+layout_mode = 2
+text = "Danger X-ing"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayButton" type="Button" parent="VBox" unique_id=663615871]
+layout_mode = 2
+text = "Play"
+
+[node name="ContinueButton" type="Button" parent="VBox" unique_id=2108338286]
+layout_mode = 2
+text = "Continue"
+
+[node name="QuitButton" type="Button" parent="VBox" unique_id=1829703492]
+layout_mode = 2
+text = "Quit"
