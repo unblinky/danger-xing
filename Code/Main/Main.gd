@@ -2,9 +2,12 @@ extends Node
 class_name Main
 
 # Level Files.
+const CHICKEN_LESS = preload("res://Levels/ChickenLess.tscn")
 const SUNNY_DAY = preload("res://Levels/SunnyDay.tscn")
 const ROSE_GARDEN = preload("res://Levels/RoseGarden.tscn")
 const GARDEN_HOME = preload("res://Levels/GardenHome.tscn")
+
+@onready var pause_menu: PauseMenu = $PauseMenu
 
 var level_files: Array[PackedScene]
 var file_index = 0
@@ -13,10 +16,11 @@ var level: Level = null
 
 
 func _ready() -> void:
-	level_files.append(SUNNY_DAY)   # level_files[0]
-	level_files.append(ROSE_GARDEN) # level_files[1]
-	level_files.append(GARDEN_HOME) # level_files[2]
-	load_level(SUNNY_DAY)
+	level_files.append(CHICKEN_LESS) # level_files[0]
+	level_files.append(SUNNY_DAY)    # level_files[1]
+	level_files.append(ROSE_GARDEN)  # level_files[2]
+	level_files.append(GARDEN_HOME)  # level_files[3]
+	load_level(CHICKEN_LESS)
 
 
 func load_level(scene: PackedScene):
@@ -31,3 +35,7 @@ func next_level():
 	if file_index > level_files.size() - 1:
 		file_index = 0
 	load_level(level_files[file_index])
+
+func game_over():
+	pause_menu.show_game_over_layout()
+	file_index = 0

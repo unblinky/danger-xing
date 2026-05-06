@@ -1,6 +1,13 @@
 [gd_scene format=3 uid="uid://dkrcw84mho1yp"]
 
+[ext_resource type="StyleBox" uid="uid://b2ja0bc053xlm" path="res://PauseMenu/assets/pause_style.tres" id="1_3e0cs"]
 [ext_resource type="Script" uid="uid://bo0m5o8islhfu" path="res://PauseMenu/PauseMenu.gd" id="1_egqmv"]
+[ext_resource type="FontFile" uid="uid://bvp3k3inn3mlk" path="res://Fonts/Audiowide/Audiowide-Regular.ttf" id="2_eyhbq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3e0cs"]
+font = ExtResource("2_eyhbq")
+font_size = 34
+font_color = Color(0.9695316, 0.91880774, 0.73424906, 1)
 
 [node name="PauseMenu" type="PanelContainer" unique_id=2018929069]
 process_mode = 3
@@ -9,12 +16,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -39.5
-offset_top = -64.0
-offset_right = 39.5
-offset_bottom = 64.0
+offset_left = -161.75
+offset_top = -142.0
+offset_right = 161.75
+offset_bottom = 72.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = ExtResource("1_3e0cs")
 script = ExtResource("1_egqmv")
 
 [node name="VBox" type="VBoxContainer" parent="." unique_id=235907090]
@@ -22,16 +30,23 @@ layout_mode = 2
 
 [node name="Message" type="Label" parent="VBox" unique_id=1081735735]
 layout_mode = 2
+size_flags_vertical = 3
 text = "message"
+label_settings = SubResource("LabelSettings_3e0cs")
+horizontal_alignment = 1
 
 [node name="PlayButton" type="Button" parent="VBox" unique_id=2069195639]
 layout_mode = 2
+size_flags_vertical = 3
 text = "Play"
 
 [node name="ContinueButton" type="Button" parent="VBox" unique_id=1395028183]
+visible = false
 layout_mode = 2
+size_flags_vertical = 3
 text = "Continue"
 
 [node name="QuitButton" type="Button" parent="VBox" unique_id=1647798492]
 layout_mode = 2
+size_flags_vertical = 3
 text = "Quit"

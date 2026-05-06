@@ -31,19 +31,22 @@ func show_opening_layout():
 	quit_button.show()
 
 func show_game_over_layout():
-	message.text = "Game Over - Play Again?"
+	message.text = "Game Over"
 	play_button.show()
+	play_button.text = "Play Again?"
 	continue_button.hide()
 	quit_button.show()
+	show()
 
 func show_paused_layout():
 	message.text = "Game Paused"
 	play_button.hide()
 	continue_button.show()
 	quit_button.show()
-	
+	show()
 
 func on_play_pressed():
+	main.next_level()
 	hide()
 
 func on_continue_pressed():

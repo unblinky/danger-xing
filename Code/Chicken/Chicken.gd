@@ -17,7 +17,7 @@ var weight: float = 1.0 # We're already there.
 
 
 var riding_vessel: Vessel = null
-
+var main: Main
 
 func _ready() -> void:
 	area_entered.connect(on_collision)
@@ -25,6 +25,7 @@ func _ready() -> void:
 	spawning_point = position
 	from = spawning_point
 	to = spawning_point
+	main = get_parent().get_parent()
 
 func _process(delta: float) -> void:
 	if weight >= 1.0:
@@ -92,9 +93,10 @@ func destroy():
 
 func update_lives(delta_lives: int):
 	lives += delta_lives
-	if lives <= 0:
-		print("Game Over")
+	if lives < 0:
 		lives = 0
+		# TODO: print("Game Over")
+		main.game_over()
 	
 	lives_ui.text = "Lives: " + str(lives)
 
