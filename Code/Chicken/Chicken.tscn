@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://d2ylk5fblpau0" path="res://Chicken/Chicken.gd" id="1_13h8f"]
 [ext_resource type="Material" uid="uid://dlyf5cjkcjm5j" path="res://Car/assets/RubberTire.tres" id="2_nv08f"]
-[ext_resource type="FontFile" uid="uid://bgvkopk0ufh7g" path="res://Fonts/Luckiest_Guy/LuckiestGuy-Regular.ttf" id="3_kahpe"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_13h8f"]
 size = Vector3(0.8, 0.9, 0.8)
@@ -18,26 +17,6 @@ size = Vector3(1, 0.542, 0.542)
 albedo_color = Color(0.8309133, 0.17172858, 6.738305e-07, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_1m4ld"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nv08f"]
-content_margin_left = 26.0
-content_margin_top = 26.0
-content_margin_right = 26.0
-content_margin_bottom = 26.0
-bg_color = Color(0.18039216, 0.69803923, 0.5372549, 1)
-border_width_left = 6
-border_width_top = 6
-border_width_right = 6
-border_width_bottom = 6
-border_color = Color(0.822289, 0.8341726, 0.3158149, 1)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
-
-[sub_resource type="LabelSettings" id="LabelSettings_nv08f"]
-font = ExtResource("3_kahpe")
-font_size = 31
 
 [node name="Chicken" type="Area3D" unique_id=1331344239]
 script = ExtResource("1_13h8f")
@@ -89,15 +68,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9802322e-08, 1.843405, 8.47
 anchors_preset = -1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -263.0
+offset_left = -204.0
 offset_top = 30.0
 offset_right = -27.0
-offset_bottom = 133.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_nv08f")
+offset_bottom = 144.0
 
 [node name="LivesUI" type="Label" parent="UI" unique_id=1087029202]
 layout_mode = 2
 text = "0123456789"
-label_settings = SubResource("LabelSettings_nv08f")
-horizontal_alignment = 1
-vertical_alignment = 1
